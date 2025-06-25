@@ -40,10 +40,10 @@ class BaseAppSettings(BaseSettings):
 
 
 class DevelopmentSettings(BaseAppSettings):
-    model_config = SettingsConfigDict(env_file=".env.development")
+    model_config = SettingsConfigDict(env_file="backend/.env.development")
     CORS_ORIGINS: list[str] = ["http://localhost:8000"]
 
 
 class ProductionSettings(BaseAppSettings):
-    model_config = SettingsConfigDict(env_file=".env.production")
+    model_config = SettingsConfigDict(env_file="backend/.env.production")
     CORS_ORIGINS: list[str] = ["https://myapp.com"]
