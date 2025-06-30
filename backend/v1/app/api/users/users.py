@@ -16,3 +16,8 @@ def dashboard():
 @router.get("/dashboard/details/finerdetails")
 def dashboard():
     return {"testing": "dashboard_details_finer"}
+
+
+@router.post("/register-user")
+def register_user():
+    return {"testing": "dashboard"}

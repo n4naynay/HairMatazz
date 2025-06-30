@@ -45,5 +45,5 @@ class DevelopmentSettings(BaseAppSettings):
 
 
 class ProductionSettings(BaseAppSettings):
-    model_config = SettingsConfigDict(env_file="backend/.env.production")
+    model_config = SettingsConfigDict(env_file="backend/`.env.production")
     CORS_ORIGINS: list[str] = ["https://myapp.com"]
