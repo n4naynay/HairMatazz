@@ -1,4 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Body
+
+from backend.v1.app.models.users.users import UserCreate
 
 router = APIRouter()
 
@@ -18,6 +20,9 @@ def dashboard():
     return {"testing": "dashboard_details_finer"}
 
 
-@router.post("/register-user")
-def register_user():
-    return {"testing": "dashboard"}
+@router.post("/register-user", response_model=UserCreate, tags=["users"])
+async def register_user(
+        new_user: UserCreate = Body(..., embed=True)
+):
+    print(new_user)
+    return new_user
